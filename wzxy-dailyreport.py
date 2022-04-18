@@ -14,6 +14,16 @@ import requests
 import utils
 
 
+
+
+import time
+import hashlib
+sign_time = int(round(time.time() * 1000)) #13位
+content = f"云南省_{t}_昆明市"
+signature = hashlib.sha256(content.encode('utf-8')).hexdigest()
+
+
+
 class WoZaiXiaoYuanPuncher:
     def __init__(self):
         # JWSESSION
